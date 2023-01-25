@@ -17,6 +17,7 @@
 		B32C79A429818A2100B49A2A /* reproduce_odr_crashTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B32C79A329818A2100B49A2A /* reproduce_odr_crashTests.m */; };
 		B32C79AE29818A2100B49A2A /* reproduce_odr_crashUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B32C79AD29818A2100B49A2A /* reproduce_odr_crashUITests.m */; };
 		B32C79B029818A2100B49A2A /* reproduce_odr_crashUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B32C79AF29818A2100B49A2A /* reproduce_odr_crashUITestsLaunchTests.m */; };
+		B32C79BE29818B7000B49A2A /* 0460. Glamor - AShamaluevMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B32C79BD29818B7000B49A2A /* 0460. Glamor - AShamaluevMusic.mp3 */; settings = {ASSET_TAGS = ("0460. Glamor - AShamaluevMusic.mp3", ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		B32C79A929818A2100B49A2A /* reproduce_odr_crashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reproduce_odr_crashUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32C79AD29818A2100B49A2A /* reproduce_odr_crashUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reproduce_odr_crashUITests.m; sourceTree = "<group>"; };
 		B32C79AF29818A2100B49A2A /* reproduce_odr_crashUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reproduce_odr_crashUITestsLaunchTests.m; sourceTree = "<group>"; };
+		B32C79BD29818B7000B49A2A /* 0460. Glamor - AShamaluevMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "0460. Glamor - AShamaluevMusic.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		B32C798629818A1F00B49A2A /* reproduce_odr_crash */ = {
 			isa = PBXGroup;
 			children = (
+				B32C79BC29818B6200B49A2A /* Audio */,
 				B32C798729818A1F00B49A2A /* AppDelegate.h */,
 				B32C798829818A1F00B49A2A /* AppDelegate.m */,
 				B32C798A29818A1F00B49A2A /* SceneDelegate.h */,
@@ -134,6 +137,14 @@
 				B32C79AF29818A2100B49A2A /* reproduce_odr_crashUITestsLaunchTests.m */,
 			);
 			path = reproduce_odr_crashUITests;
+			sourceTree = "<group>";
+		};
+		B32C79BC29818B6200B49A2A /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				B32C79BD29818B7000B49A2A /* 0460. Glamor - AShamaluevMusic.mp3 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					"0460. Glamor - AShamaluevMusic.mp3",
+				);
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					B32C798329818A1F00B49A2A = {
@@ -242,6 +256,7 @@
 				B32C799729818A2100B49A2A /* LaunchScreen.storyboard in Resources */,
 				B32C799429818A2100B49A2A /* Assets.xcassets in Resources */,
 				B32C799229818A1F00B49A2A /* Main.storyboard in Resources */,
+				B32C79BE29818B7000B49A2A /* 0460. Glamor - AShamaluevMusic.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
