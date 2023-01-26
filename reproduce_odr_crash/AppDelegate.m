@@ -7,29 +7,19 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
-
-@property (strong, nonatomic) NSMutableArray *requests;
-
-@end
-
 @implementation AppDelegate
 
-- (void)getString {
-    NSString *url = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"test"];
-    NSLog(@"url is %@", url);
-}
-
 - (void)odr {
-    int n = 12;
+    int n = 20;
     for(int i = 0; i < n; ++i) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
             NSSet *tags = [NSSet setWithObject:@"0460. Glamor - AShamaluevMusic.mp3"];
             NSBundleResourceRequest *request = [[NSBundleResourceRequest alloc] initWithTags:tags];
             [request conditionallyBeginAccessingResourcesWithCompletionHandler:^(BOOL resourcesAvailable) {
                 if(resourcesAvailable) {
-                    NSLog(@"resource available!");
+                    NSLog(@"xxxx, resource available!");
                 } else {
+                    NSLog(@"xxxx, resource not available");
                     [NSOperationQueue.mainQueue addOperationWithBlock:^{
                         [self getResource];
                     }];
@@ -43,21 +33,20 @@
 - (void)getResource {
     NSSet *tags = [NSSet setWithObject:@"0460. Glamor - AShamaluevMusic.mp3"];
     NSBundleResourceRequest *request = [[NSBundleResourceRequest alloc] initWithTags:tags];
-    [self.requests addObject:request];
     [request beginAccessingResourcesWithCompletionHandler:^(NSError * _Nullable error) {
         NSLog(@"xxxx, error: %@", error);
     }];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    self.requests = [[NSMutableArray alloc] init];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         while(true) {
-            [self getString];
+            NSString *url = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"test"];
         }
     });
+    
     [self odr];
+    
     return YES;
 }
 
