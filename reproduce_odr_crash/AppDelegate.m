@@ -10,38 +10,24 @@
 @implementation AppDelegate
 
 - (void)odr {
-    int n = 20;
+    int n = 20000;
     for(int i = 0; i < n; ++i) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-            NSSet *tags = [NSSet setWithObject:@"0460. Glamor - AShamaluevMusic.mp3"];
-            NSBundleResourceRequest *request = [[NSBundleResourceRequest alloc] initWithTags:tags];
-            [request conditionallyBeginAccessingResourcesWithCompletionHandler:^(BOOL resourcesAvailable) {
-                if(resourcesAvailable) {
-                    NSLog(@"xxxx, resource available!");
-                } else {
-                    NSLog(@"xxxx, resource not available");
-                    [NSOperationQueue.mainQueue addOperationWithBlock:^{
-                        [self getResource];
-                    }];
-                }
-                
+            [NSOperationQueue.mainQueue addOperationWithBlock:^{
+                NSSet *tags = [NSSet setWithObject:@"0460. Glamor - AShamaluevMusic.mp3"];
+                NSBundleResourceRequest *request = [[NSBundleResourceRequest alloc] initWithTags:tags];
+                [request beginAccessingResourcesWithCompletionHandler:^(NSError * _Nullable error) {
+                    NSLog(@"xxxx, error: %@", error);
+                }];
             }];
         });
     }
 }
 
-- (void)getResource {
-    NSSet *tags = [NSSet setWithObject:@"0460. Glamor - AShamaluevMusic.mp3"];
-    NSBundleResourceRequest *request = [[NSBundleResourceRequest alloc] initWithTags:tags];
-    [request beginAccessingResourcesWithCompletionHandler:^(NSError * _Nullable error) {
-        NSLog(@"xxxx, error: %@", error);
-    }];
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         while(true) {
-            NSString *url = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"test"];
+            [[NSBundle mainBundle] objectForInfoDictionaryKey:@"test"];
         }
     });
     
